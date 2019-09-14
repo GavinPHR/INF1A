@@ -1,4 +1,5 @@
-## <a href="book.pdf" target ="_blank">Logic Notes</a>
+## Computation && Logic
+### <a href="book.pdf" target ="_blank">Notes</a>
 
 | WEEK |         Tutorial     |  Solution |  Comments
 |:----:|----------------------|:------------: | :--: |
