@@ -2,18 +2,18 @@
 ### <a href="book.pdf" target ="_blank">Notes</a>
 
 | WEEK | Lecture |       Tutorial     |  Solution    | 
-|:----:|---------|--------------------|:------------:|:--------:|
+|:----:|---------|--------------------|:------------:|
 | 1    |         |           |          |   
-| 2    |         |  [Tutorial1.pdf](./tutorial1/Tutorial1.pdf)<br>[Tutorial1.hs](./tutorial1/Tutorial1.hs)   |    N/A                 
-| 3    |         |                    |              |          |
-| 4    |         |                    |              |          |
-| 5    |         |                    |              |          |
-| 6    |         |                    |              |          |
-| 7    |         |                    |              |          |
-| 8    |         |                    |              |          |
-| 9    |         |                    |              |          |
-| 10   |         |                    |              |          |
-| 11   |         |                    |              |          |
+| 2    |         |  <a href="./tutorial1/Tutorial1.pdf" target ="_blank">Tutorial1.pdf</a><br><a href="./tutorial1/Tutorial1.hs" target ="_blank">Tutorial1.hs</a>   |    N/A                 
+| 3    |         |                    |              |          
+| 4    |         |                    |              |          
+| 5    |         |                    |              |          
+| 6    |         |                    |              |          
+| 7    |         |                    |              |          
+| 8    |         |                    |              |          
+| 9    |         |                    |              |          
+| 10   |         |                    |              |          
+| 11   |         |                    |              |          
 
 ### Contacts:
 Haoran Peng <a href="mailto:hpeng2@ed.ac.uk" target="_blank">hpeng2@ed.ac.uk</a>  
