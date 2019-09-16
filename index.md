@@ -1,10 +1,10 @@
 ## Computation && Logic
 ### <a href="book.pdf" target ="_blank">Notes</a>
 
-| WEEK | Lecture |       Tutorial     |  Solution    | Comments |
+| WEEK | Lecture |       Tutorial     |  Solution    | 
 |:----:|---------|--------------------|:------------:|:--------:|
-| 1    |         |                    |              |          |   
-| 2    |         |                    |              |          |
+| 1    |         |           |          |   
+| 2    |         |  [Tutorial1.pdf](./tutorial1/Tutorial1.pdf)<br>[Tutorial1.hs](./tutorial1/Tutorial1.hs)   |    N/A                 
 | 3    |         |                    |              |          |
 | 4    |         |                    |              |          |
 | 5    |         |                    |              |          |
