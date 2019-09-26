@@ -1,4 +1,3 @@
-import Tutorial1Solution
 import Test.QuickCheck
 
 -- Negation on predicates
