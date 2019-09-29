@@ -85,6 +85,8 @@ instance CoArbitrary Thing where
 
 instance Show (a -> b) where
     show f = "Sorry, your implementation is not quite correct:("
+infixr 0 |=
+infixr 0 |/=
 infixr 2 |:|
 infixr 3 &:&
 propEntail :: (Thing -> Bool) -> (Thing -> Bool) -> Bool
