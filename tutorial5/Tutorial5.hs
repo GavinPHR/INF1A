@@ -116,17 +116,16 @@ prob2 = entries "792348615836915472451672938679854321245193867183726594567431289
 prob3 = entries "792348615836915472451672938679854321245193867183726594567431289928567143314289760"
 
 check :: (Int -> Int -> Int -> Bool) -> Bool
-check prob =
+check entered =
   -- every square is filled
-  every [1..9] (\i -> every [1..9] (\j -> some [1..9] (\k -> prob i j k)))
+  and [ or[entered i j k | k <- [1..9] ]
+      | i <- [1..9], j <- [1..9] ]
   && -- no square is filled twice
-  every [1..9]
-  (\i -> every [1..9]
-         (\j -> every [1..9]
-                (\k -> every [1..(k-1)]
-                       (\k' -> or[not(prob i j k), not(prob i j k')]))))
+  and [ or[ not(entered i j k), not (entered i j k') ]
+      | i <- [1..9], j <- [1..9], k <- [1..9], k' <- [1..9] ]
   && -- every row contains every digit
-  every [1..9] (\i -> every [0..9] (\k -> some [0..9] (\j -> prob i j k)))
+  and [ or [entered i j k | j <- [1..9] ]
+      | i <- [1..9], k<- [1..9] ]
   -- every column contains every digit
   -- every big square contains every digit
 
