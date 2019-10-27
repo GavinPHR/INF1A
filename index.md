@@ -8,7 +8,7 @@
 | 3    |         | <a href="./tutorial2/Tutorial2.pdf" target ="_blank">Tutorial2.pdf</a><br><a href="./tutorial2/Tutorial2.hs" target ="_blank">Tutorial2.hs</a>   |    <a href="./tutorial2/Tutorial2Solution.pdf" target ="_blank">Tutorial2Solution.pdf</a><br><a href="./tutorial2/Tutorial2Solution.hs" target ="_blank">Tutorial2Solution.hs</a>          
 | 4    |         | <a href="./tutorial3/Tutorial3.pdf" target ="_blank">Tutorial3.pdf</a>                   |<a href="./tutorial3/Tutorial3Solution.pdf" target ="_blank">Tutorial3Solution.pdf</a>         
 | 5    |         | <a href="./tutorial4/Tutorial4.pdf" target ="_blank">Tutorial4.pdf</a>                   |<a href="./tutorial4/Tutorial4Solution.pdf" target ="_blank">Tutorial4Solution.pdf</a>         
-| 6    |         | <a href="./tutorial5/Tutorial5.pdf" target ="_blank">Tutorial5.pdf</a><br><a href="./tutorial5/Tutorial5.hs" target ="_blank">Tutorial5.hs</a><br><a href="./tutorial5/Tutorial1Solution.hs" target ="_blank">Tutorial1Solution.hs</a>                   
+| 6    |         | <a href="./tutorial5/Tutorial5.pdf" target ="_blank">Tutorial5.pdf</a><br><a href="./tutorial5/Tutorial5.hs" target ="_blank">Tutorial5.hs</a><br><a href="./tutorial5/Tutorial1Solution.hs" target ="_blank">Tutorial1Solution.hs</a> |<a href="./tutorial5/Tutorial5Solution.pdf" target ="_blank">Tutorial5.pdf</a><br><a href="./tutorial5/Tutorial5Solution.hs" target ="_blank">Tutorial5.hs</a>                
 | 7    |         | <a href="./tutorial6/Tutorial6.pdf" target ="_blank">Tutorial6.pdf</a><br><a href="./tutorial6/Tutorial6.hs" target ="_blank">Tutorial6.hs</a>          
 | 8    |         |                    |              |          
 | 9    |         |                    |              |          
