@@ -11,7 +11,7 @@
 | 6    |         | <a href="./tutorial5/Tutorial5.pdf" target ="_blank">Tutorial5.pdf</a><br><a href="./tutorial5/Tutorial5.hs" target ="_blank">Tutorial5.hs</a><br><a href="./tutorial5/Tutorial1Solution.hs" target ="_blank">Tutorial1Solution.hs</a> |<a href="./tutorial5/Tutorial5Solution.pdf" target ="_blank">Tutorial5Solution.pdf</a><br><a href="./tutorial5/Tutorial5Solution.hs" target ="_blank">Tutorial5Solution.hs</a>                
 | 7    |         | <a href="./tutorial6/Tutorial6.pdf" target ="_blank">Tutorial6.pdf</a><br><a href="./tutorial6/Tutorial6.hs" target ="_blank">Tutorial6.hs</a> | <a href="./tutorial6/Tutorial6Solution.pdf" target ="_blank">Tutorial6Solution.pdf</a><br><a href="./tutorial6/Tutorial6Solution.hs" target ="_blank">Tutorial6Solution.hs</a>        
 | 8    |         | <a href="./tutorial7/Tutorial7.pdf" target ="_blank">Tutorial7.pdf</a><br><a href="./tutorial7/Tutorial7.hs" target ="_blank">Tutorial7.hs</a> |                    
-| 9    |         |                    |              |          
+| 9    |         | <a href="./tutorial8/Tutorial8.pdf" target ="_blank">Tutorial8.pdf</a><br><a href="./tutorial8/Tutorial8.hs" target ="_blank">Tutorial8.hs</a> |                        
 | 10   |         |                    |              |          
 | 11   |         |                    |              |          
 
