@@ -4,9 +4,9 @@ import Test.QuickCheck
 import Data.Char
 
 -- 1. return the set of nodes reached by any number of steps (including 0)
-reach' :: Ord q => ([q] -> Set q) -> Set q -> Set q
-reach' step gs =
-   if gs' == gs then gs else reach' step gs'
+reach :: Ord q => ([q] -> Set q) -> Set q -> Set q
+reach step gs =
+   if gs' == gs then gs else reach step gs'
    where gs' = gs \/ step gs
 
 -- Uncomment the block below and complete your answer
@@ -58,7 +58,7 @@ eg1 = g0 [1,2] [9]
 
 
 -- 4.
-reachableFSM (FSM _ _ ts ss _) = reach' (one_step ts) ss
+reachableFSM (FSM _ _ ts ss _) = reach (one_step ts) ss
 
 -- 5.Uncomment the block below and complete your answer 
 pruneFSM fsm@(FSM qs as ts ss fs) =
@@ -101,7 +101,7 @@ m3 =  NFA [0..5] "ab" [ (1,'a',2), (3,'b',4)] [ (0,1), (2,3), (0,5), (4,5), (4,1
 eStep  :: Ord q =>  [(q,q)] -> [q] -> Set q
 eStep es qs = undefined
 eClose :: Ord q => [(q,q)] -> [q] -> Set q   
-eClose es = reach' (eStep es)
+eClose es = reach (eStep es)
 
 
 
@@ -129,7 +129,7 @@ next ts as qqs = set [ddelta ts a qs | qs <- qqs, a <- as ]
 fsm2dfa :: Ord q => FSM q -> FSM [q]
 fsm2dfa (FSM qs as ts ss fs) =
   FSM qss as ts' ss' fs' where
-  qss = reach' (next ts as) [ss] 
+  qss = reach (next ts as) [ss] 
   ts' = [ (qs, a, ddelta ts a qs) | qs <- qss, a <- as ]
   ss' = [ss]
   fs' = [ qs | qs <- qss, or[ q`elem`fs | q <- qs ]]
@@ -145,11 +145,12 @@ eNext ts es as qqs = set undefined
 
 
 -- 12.
-nfa2dfa :: Ord q => NFA q -> FSM [q]
+nfa2dfa :: Ord q => NFA q -> NFA [q]
 nfa2dfa (NFA qs as ts es ss fs) =
-  mkFSM qss as ts' ss' fs' where
+  mkNFA qss as ts' es' ss' fs' where
   qss = undefined
   ts' = undefined
+  es' = undefined
   ss' = undefined
   fs' = undefined
 
@@ -165,7 +166,18 @@ lookUp qis q' = the [ i | (q,i) <- qis, q == q' ]
   the [q] = q
   the _ = error (show qis)
 
--- 13. Use mapTrans and lookUp for this exercise 
+
+
+-- 13
+reverseNFA :: Ord q => NFA q -> NFA q
+reverseNFA = undefined
+
+tidyNFA :: Ord q => NFA q -> NFA [[q]]
+tidyNFA =  nfa2dfa . reverseNFA .  nfa2dfa . reverseNFA
+
+
+
+-- 14. Use mapTrans and lookUp for this exercise 
 intFSM :: (Ord q, Show q) => FSM q -> FSM Int
 intFSM (FSM qs as ts ss fs)  = undefined
     
@@ -193,7 +205,7 @@ thompson (NFA qs as ts es ss fs) =
 
 
 
--- 14.
+-- 15.
 stringNFA :: String -> NFA Int
 stringNFA xs = undefined
         
@@ -206,24 +218,48 @@ fullNFA = undefined
 
 
 
--- 15.
+-- 16.
 concatNFA :: (Ord a, Ord b) => NFA a -> NFA b -> NFA (Either a b)
 concatNFA (NFA qs as ts es ss fs)(NFA qs' as' ts' es' ss' fs') = undefined
 
 
 
--- 16.
+-- 17.
 kstarNFA :: NFA q -> NFA(QF q)
 kstarNFA (NFA qs as ts es ss fs) = undefined
 
 
 
--- 17.
+-- 18.
 unionNFA :: (Ord q, Ord q') => NFA q -> NFA q' -> NFA (QF (Either q q'))
 unionNFA (NFA qs as ts es ss fs) (NFA qs' as' ts' es' ss' fs') = undefined
 
 
--- 18
+-- 19
+completeNFA :: (Ord q) => NFA q -> NFA (Maybe q)
+completeNFA   = undefined
+
+complementNFA :: (Ord q) => NFA q -> NFA (Maybe q)
+complementNFA = undefined
+
+intersectNFA :: (Ord q, Ord q') => NFA q -> NFA q' -> NFA (q,q')
+intersectNFA  = undefined
+
+
+
+-- 20
+data Regex = Zero             -- empty language
+           | Eps              -- [""]
+           | S String          -- [s]
+           | (:|:) Regex Regex -- R|S union
+           | (:>:) Regex Regex -- RS
+           | Star Regex        -- R*
+           | Not Regex         -- complement
+           | (:&:) Regex Regex -- intersection
+           deriving (Show)
+
+regex2NFA :: Regex -> NFA Int
+regex2NFA = undefined
 
 -- DFA
 isDFA :: Ord q => FSM q -> Bool
@@ -304,15 +340,7 @@ complementFSM fsm =
   let (FSM qs as ts ss fs) = completeFSM fsm
   in FSM qs as ts ss (qs \\ fs)
 
-data Regex = Zero             -- empty language
-           | Eps              -- [""]
-           | S String          -- [s]
-           | (:|:) Regex Regex -- R|S union
-           | (:>:) Regex Regex -- RS
-           | Star Regex        -- R*
-           | Not Regex         -- complement
-           | (:&:) Regex Regex -- intersection
-           deriving (Show)
+
 (&) :: a -> (a -> b) -> b
 (&) x f = f x -- "a" 
 infix 9 & 
