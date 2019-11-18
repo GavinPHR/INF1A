@@ -14,7 +14,11 @@ mapS :: Ord b => (a -> b) -> Set a -> Set b
 mapS = Set.map 
 set :: Ord q => [q] -> Set q
 set = Set.fromList
-
+cartesianProduct :: (Ord a, Ord b) => Set a -> Set b -> Set (a,b)
+cartesianProduct a b = Set.fromList [(x,y) | x <- xs, y <- ys]
+    where 
+      xs = Set.toList a
+      ys = Set.toList b
 -- 1.
 -- return the set of nodes reached by any number of steps (including 0)
 reach' :: Ord q => (Set q -> Set q) -> Set q -> Set q
@@ -392,11 +396,11 @@ unionFSM = sumFSM
 productFSM :: (Ord q, Ord q') => FSM q -> FSM q' -> FSM (q,q')
 productFSM (FSM qs as ts ss fs) (FSM qs' as' ts' ss' fs')
   = FSM qs'' as'' ts'' ss'' fs'' where
-    qs'' = Set.cartesianProduct qs qs'
+    qs'' = cartesianProduct qs qs'
     as'' = (as \/ as')
     ts'' = [((x,y), a, (x',y')) | (x,a,x') <- ts, (y,a',y') <- ts', a == a']
-    ss'' = Set.cartesianProduct ss ss' 
-    fs'' = Set.cartesianProduct fs fs'
+    ss'' = cartesianProduct ss ss' 
+    fs'' = cartesianProduct fs fs'
 
 intersectFSM :: (Ord q, Ord q') => FSM q -> FSM q' -> FSM (q,q')
 intersectFSM = productFSM
